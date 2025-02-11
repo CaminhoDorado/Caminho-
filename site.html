@@ -62,25 +62,24 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            flex-direction: column; /* Ajuste para que o conteúdo fique em coluna */
+            flex-direction: column;
         }
 
         header img {
             width: 50px;
             height: 50px;
-            margin-bottom: 10px; /* Espaço abaixo do logo */
+            margin-bottom: 10px;
         }
 
         h1 {
-            margin-bottom: 0; /* Remove o espaço abaixo do título */
+            margin-bottom: 0;
         }
 
         h1 img {
-            height: 40px; /* Ajuste o tamanho da imagem de ramos */
-            margin-left: 10px; /* Adiciona espaço entre o nome e a imagem */
+            height: 40px;
+            margin-left: 10px;
         }
 
-        /* Diminuir o espaçamento entre o cabeçalho e a seção "Quem Somos" */
         #about-us {
             margin: 20px 0;
             text-align: center;
@@ -117,9 +116,18 @@
             align-items: center;
             flex-direction: column;
         }
-        .portfolio img { width: 80%; height: auto; display: none; }
 
-        .social-links { text-align: center; margin-top: 20px; }
+        .portfolio img {
+            width: 80%;
+            height: auto;
+            display: none;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .social-links a {
             text-decoration: none;
             color: #a28031;
@@ -127,11 +135,17 @@
             margin: 0 10px;
         }
 
-        /* Coordenadoras */
-        .coordinator { display: none; text-align: center; }
-        .coordinator img { width: 200px; height: 200px; border-radius: 50%; }
-        
-        /* Colocando os botões de navegação na seção Coordenadoras */
+        .coordinator {
+            display: none;
+            text-align: center;
+        }
+
+        .coordinator img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
         .coordinator-buttons {
             display: flex;
             justify-content: center;
@@ -150,13 +164,6 @@
             background-color: #d2b179;
         }
 
-        /* Seção Quem Somos */
-        #about-us {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        /* Estilo para a seção "Entre em Contato" */
         #contact {
             background-color: #f8f8f8;
             padding: 20px;
@@ -199,7 +206,6 @@
         #contact button:hover {
             background-color: #d2b179;
         }
-
     </style>
 </head>
 <body>
@@ -210,7 +216,6 @@
     </header>
 
     <div class="main-content">
-        <!-- Seção Quem Somos -->
         <section id="about-us">
             <h2>Quem Somos</h2>
             <p>Somos uma equipe apaixonada por criar momentos especiais. Nossa experiência e atenção aos detalhes garantem um evento perfeito e memorável.</p>
@@ -253,7 +258,6 @@
             </div>
         </section>
 
-        <!-- Seção Entre em Contato -->
         <section id="contact">
             <h2>Entre em Contato</h2>
             <p>Gostou do nosso trabalho? Quer saber mais ou agendar um evento? Preencha o formulário abaixo para entrar em contato conosco!</p>
@@ -280,7 +284,6 @@
             </div>
         </section>
 
-        <!-- Seção Coordenadoras -->
         <section id="coordinators">
             <h2>Coordenadoras</h2>
             <div class="coordinator">
@@ -301,7 +304,6 @@
             </div>
         </section>
 
-        <!-- Redes sociais -->
         <div class="social-links">
             <h2>Nos siga nas redes sociais!</h2>
             <a href="https://facebook.com" target="_blank">Facebook</a>
