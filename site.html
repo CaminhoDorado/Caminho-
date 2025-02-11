@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caminho Dourado - Sua Agência de Casamentos">
+    <title>Caminho Dourado Agência</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        let currentCoordinator = 0;
+        function showCoordinator(index) {
+            const items = document.querySelectorAll('.coordinator');
+            items.forEach(item => item.style.display = 'none');
+            items[index].style.display = 'block';
+            currentCoordinator = index;
+        }
+        function nextCoordinator() {
+            const items = document.querySelectorAll('.coordinator');
+            currentCoordinator = (currentCoordinator + 1) % items.length;
+            showCoordinator(currentCoordinator);
+        }
+        function prevCoordinator() {
+            const items = document.querySelectorAll('.coordinator');
+            currentCoordinator = (currentCoordinator - 1 + items.length) % items.length;
+            showCoordinator(currentCoordinator);
+        }
+        document.addEventListener("DOMContentLoaded", () => showCoordinator(0));
+
+        let currentImageIndex = 0;
+        function rotateImages() {
+            const images = document.querySelectorAll('.portfolio img');
+            images.forEach(img => img.style.display = 'none');
+            images[currentImageIndex].style.display = 'block';
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            setInterval(rotateImages, 3000);
+            rotateImages();
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+        body {
+            font-family: 'Cardo', serif;
+            color: #2B1511;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Pinyon Script', cursive;
+            color: #a28031;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            flex-direction: column; /* Ajuste para que o conteúdo fique em coluna */
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px; /* Espaço abaixo do logo */
+        }
+
+        h1 {
+            margin-bottom: 0; /* Remove o espaço abaixo do título */
+        }
+
+        h1 img {
+            height: 40px; /* Ajuste o tamanho da imagem de ramos */
+            margin-left: 10px; /* Adiciona espaço entre o nome e a imagem */
+        }
+
+        /* Diminuir o espaçamento entre o cabeçalho e a seção "Quem Somos" */
+        #about-us {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        #about-us p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-category {
+            flex: 1;
+            max-width: 300px;
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .service-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .portfolio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .portfolio img { width: 80%; height: auto; display: none; }
+
+        .social-links { text-align: center; margin-top: 20px; }
+        .social-links a {
+            text-decoration: none;
+            color: #a28031;
+            font-size: 20px;
+            margin: 0 10px;
+        }
+
+        /* Coordenadoras */
+        .coordinator { display: none; text-align: center; }
+        .coordinator img { width: 200px; height: 200px; border-radius: 50%; }
+        
+        /* Colocando os botões de navegação na seção Coordenadoras */
+        .coordinator-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .coordinator-buttons button {
+            background-color: #a28031;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .coordinator-buttons button:hover {
+            background-color: #d2b179;
+        }
+
+        /* Seção Quem Somos */
+        #about-us {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Estilo para a seção "Entre em Contato" */
+        #contact {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        #contact h2 {
+            margin-bottom: 10px;
+        }
+
+        #contact p {
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact input, #contact textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background-color: #a28031;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contact button:hover {
+            background-color: #d2b179;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Caminho Dourado">
+        <h1>Caminho Dourado Agência</h1>
+        <img src="ramos.png" alt="Ramos">
+    </header>
+
+    <div class="main-content">
+        <!-- Seção Quem Somos -->
+        <section id="about-us">
+            <h2>Quem Somos</h2>
+            <p>Somos uma equipe apaixonada por criar momentos especiais. Nossa experiência e atenção aos detalhes garantem um evento perfeito e memorável.</p>
+        </section>
+
+        <section id="services">
+            <h2>Serviços Prestados</h2>
+            <div class="services-container">
+                <div class="service-category">
+                    <h3>Planejamento</h3>
+                    <ul>
+                        <li>Definição do conceito do evento</li>
+                        <li>Auxílio com decisões importantes</li>
+                        <li>Negociação com fornecedores</li>
+                        <li>Gestão de documentos e contratos</li>
+                        <li>Organização de A&B</li>
+                        <li>Planejamento do cronograma</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Coordenação</h3>
+                    <ul>
+                        <li>Gestão de fornecedores durante a execução</li>
+                        <li>Organização de lugares</li>
+                        <li>Controle da lista de presença</li>
+                        <li>Alinhamento frequente com fornecedores</li>
+                        <li>Suporte à cerimônia</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Execução</h3>
+                    <ul>
+                        <li>Suporte antes, durante e após a cerimônia</li>
+                        <li>RSVP de convidados</li>
+                        <li>Acompanhamento de datas</li>
+                        <li>Criação de artes, convites e cardápios</li>
+                        <li>Gestão de imprevistos e suporte às necessidades ao longo do evento</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Entre em Contato -->
+        <section id="contact">
+            <h2>Entre em Contato</h2>
+            <p>Gostou do nosso trabalho? Quer saber mais ou agendar um evento? Preencha o formulário abaixo para entrar em contato conosco!</p>
+            <form action="mailto:contato@caminhodourado.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Seu nome" required>
+                <input type="tel" name="phone" placeholder="Seu número de telefone" required>
+                <input type="email" name="email" placeholder="Seu e-mail" required>
+                <textarea name="message" placeholder="Sua mensagem..." required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfólio</h2>
+            <div class="portfolio">
+                <img src="portfolio1.jpg" alt="Casamento 1">
+                <img src="portfolio2.jpg" alt="Casamento 2">
+                <img src="portfolio3.jpg" alt="Casamento 3">
+                <img src="portfolio4.jpg" alt="Casamento 4">
+                <img src="portfolio5.jpg" alt="Casamento 5">
+                <img src="portfolio6.jpg" alt="Casamento 6">
+                <img src="portfolio7.jpg" alt="Casamento 7">
+                <img src="portfolio8.jpg" alt="Casamento 8">
+            </div>
+        </section>
+
+        <!-- Seção Coordenadoras -->
+        <section id="coordinators">
+            <h2>Coordenadoras</h2>
+            <div class="coordinator">
+                <img src="coordenadora1.jpg" alt="Coordenadora 1">
+                <p>Nome da Coordenadora 1 - Experiência e compromisso para um evento perfeito.</p>
+            </div>
+            <div class="coordinator">
+                <img src="coordenadora2.jpg" alt="Coordenadora 2">
+                <p>Nome da Coordenadora 2 - Pronta para tornar o seu evento inesquecível.</p>
+            </div>
+            <div class="coordinator">
+                <img src="coordenadora3.jpg" alt="Coordenadora 3">
+                <p>Nome da Coordenadora 3 - Com dedicação e experiência, cuidamos de todos os detalhes.</p>
+            </div>
+            <div class="coordinator-buttons">
+                <button onclick="prevCoordinator()"><</button>
+                <button onclick="nextCoordinator()">></button>
+            </div>
+        </section>
+
+        <!-- Redes sociais -->
+        <div class="social-links">
+            <h2>Nos siga nas redes sociais!</h2>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </div>
+</body>
+</html>
